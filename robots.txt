@@ -1,0 +1,11 @@
+# ══════════════════════════════════════
+# robots.txt – Ferroprime SAS
+# www.ferroprimeco.com
+# ══════════════════════════════════════
+
+# Permitir a todos los robots indexar el sitio
+User-agent: *
+Allow: /
+
+# Ubicación del sitemap para indexación rápida
+Sitemap: https://www.ferroprimeco.com/sitemap.xml

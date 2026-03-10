@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ══ SEO PRIMARIO ══ -->
+  <title>Ferroprime SAS | Soldadura Industrial y Metalmecánica en Medellín</title>
+  <meta name="description" content="Ferroprime SAS en Medellín, Colombia. Soldadura MIG, TIG y electrodo, diseño y fabricación metalmecánica, corte, doblado, armado y mantenimiento de estructuras metálicas industriales. Solicita tu cotización." />
+  <meta name="keywords" content="soldadura Medellín, soldadura industrial Medellín, metalmecánica Medellín, fabricación estructuras metálicas Medellín, soldadura MIG TIG Medellín, mantenimiento estructuras metálicas Colombia, corte y doblado metal Medellín, taller metalmecánico Medellín, Ferroprime SAS, estructuras metálicas industriales Antioquia" />
+  <meta name="author" content="Ferroprime SAS" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.ferroprimeco.com/" />
+  <link rel="sitemap" type="application/xml" href="https://www.ferroprimeco.com/sitemap.xml" />
+
+  <!-- ══ SEO LOCAL / GEO ══ -->
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín, Antioquia, Colombia" />
+  <meta name="geo.position" content="6.2442;-75.5812" />
+  <meta name="ICBM" content="6.2442, -75.5812" />
+
+  <!-- ══ OPEN GRAPH ══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ferroprimeco.com/" />
+  <meta property="og:title" content="Ferroprime SAS | Soldadura Industrial en Medellín" />
+  <meta property="og:description" content="Diseño, fabricación y mantenimiento metalmecánico en Medellín. Soldadura MIG, TIG y electrodo. ¡Solicita tu cotización hoy!" />
+  <meta property="og:image" content="https://www.ferroprimeco.com/images/logo.png" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="Ferroprime SAS" />
+
+  <!-- ══ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ferroprime SAS | Soldadura Industrial en Medellín" />
+  <meta name="twitter:description" content="Diseño, fabricación y mantenimiento metalmecánico en Medellín, Colombia." />
+  <meta name="twitter:image" content="https://www.ferroprimeco.com/images/logo.png" />
+
+  <!-- ══ SCHEMA.ORG (Google Business) ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ferroprime SAS",
+    "description": "Empresa metalmecánica en Medellín especializada en soldadura industrial MIG, TIG y electrodo, diseño y fabricación de estructuras metálicas, corte, doblado y mantenimiento industrial.",
+    "url": "https://www.ferroprimeco.com",
+    "telephone": "+573046657025",
+    "email": "ventas@ferroprimeco.com",
+    "logo": "https://www.ferroprimeco.com/images/logo.png",
+    "image": "https://www.ferroprimeco.com/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Medellín",
+      "addressRegion": "Antioquia",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 6.2442,
+      "longitude": -75.5812
+    },
+    "areaServed": ["Medellín", "Antioquia", "Colombia"],
+    "priceRange": "$$",
+    "sameAs": ["https://www.instagram.com/ferroprime_sas"],
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "serviceType": [
+      "Soldadura industrial MIG TIG electrodo",
+      "Fabricación de estructuras metálicas",
+      "Corte y doblado de metal",
+      "Mantenimiento de estructuras metálicas",
+      "Diseño metalmecánico",
+      "Asesoría técnica en soldadura"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- ══ HERO BACKGROUND ══ -->
+  <style>
+    /* ── Contenedor con overflow:hidden para el parallax ligero ── */
+    #hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      /* GPU layer propio — evita repaint en el resto de la página */
+      isolation: isolate;
+    }
+
+    /* ── La imagen vive en ::before, separada del contenido ──
+       will-change + transform3d = compositing en GPU, 0 jank        */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: -8%;           /* margen extra para el movimiento parallax */
+      background-image: url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+      /* Fuerza compositing layer propio en GPU */
+      will-change: transform;
+      transform: translate3d(0, var(--parallax-y, 0px), 0);
+      z-index: 0;
+    }
+
+    /* ── Overlay oscuro degradado ── */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8,8,8,0.62) 0%,
+        rgba(8,8,8,0.45) 35%,
+        rgba(8,8,8,0.72) 70%,
+        rgba(10,10,10,0.99) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ── Contenido encima de ambos pseudo-elementos ── */
+    #hero .hero-content,
+    #hero .services-grid {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-logo {
+      filter: brightness(0) invert(1) drop-shadow(0 0 24px rgba(249,115,22,0.35));
+    }
+    .hero-logo-wrap { margin-bottom: 0; }
+
+    /* ── Mobile: sin parallax, imagen estática ── */
+    @media (max-width: 768px) {
+      #hero::before {
+        inset: 0;
+        will-change: auto;
+        background-position: 65% center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Menú principal">
+    <ul class="nav-links">
+      <li><a href="#servicios">Nuestros Servicios</a></li>
+      <li><a href="#quienes">Quiénes Somos</a></li>
+      <li><a href="#contacto">Contáctanos</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.instagram.com/ferroprime_sas" target="_blank" rel="noopener" aria-label="Instagram Ferroprime SAS">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/573046657025" target="_blank" rel="noopener" aria-label="WhatsApp Ferroprime SAS">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#servicios" class="mob-link">Nuestros Servicios</a>
+    <a href="#quienes" class="mob-link">Quiénes Somos</a>
+    <a href="#contacto" class="mob-link">Contáctanos</a>
+    <div class="mob-social">
+      <a href="https://www.instagram.com/ferroprime_sas" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573046657025" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero" aria-label="Inicio">
+    <div class="hero-content">
+      <div class="hero-logo-wrap"><img src="images/logo.png" alt="Logo Ferroprime SAS – Soldadura Industrial Medellín" class="hero-logo" /></div>
+      <h1 class="hero-title">Diseño, fabricación y mantenimiento metalmecánico.</h1>
+      <p class="hero-sub">¡Soldadura industrial confiable!</p>
+      <div class="hero-btns">
+        <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
+        <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+      </div>
+    </div>
+
+    <!-- ══ GRID 6 SERVICIOS ══ -->
+    <div class="services-grid">
+      <article class="srv-card">
+        <i class="fas fa-fire-flame-curved"></i>
+        <h3>Soldadura Especializada</h3>
+        <p>Acero al carbono, inoxidable y aleaciones especiales con procesos MIG, TIG y electrodo.</p>
+      </article>
+      <article class="srv-card">
+        <i class="fas fa-gear"></i>
+        <h3>Diseño y Fabricación</h3>
+        <p>Piezas metálicas a medida según sus especificaciones y necesidades.</p>
+      </article>
+      <article class="srv-card">
+        <i class="fas fa-wrench"></i>
+        <h3>Reparación y Mantenimiento</h3>
+        <p>Recuperación y mantenimiento de estructuras metálicas industriales y comerciales.</p>
+      </article>
+      <article class="srv-card">
+        <i class="fas fa-shield-halved"></i>
+        <h3>Proyectos a Toda Escala</h3>
+        <p>Desde un punto de soldadura hasta grandes cordones y proyectos industriales completos.</p>
+      </article>
+      <article class="srv-card">
+        <i class="fas fa-ruler"></i>
+        <h3>Corte, Doblado y Armado</h3>
+        <p>Corte y conformado de perfiles, láminas y estructuras metálicas.</p>
+      </article>
+      <article class="srv-card">
+        <i class="fas fa-circle-question"></i>
+        <h3>Asesoría Técnica</h3>
+        <p>Consultoría en procesos, materiales y técnicas de soldadura para su proyecto.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════════ DETALLE SERVICIOS ══════════════ -->
+  <section id="servicios" aria-label="Servicios detallados">
+
+    <div class="service-row reverse">
+      <div class="service-text">
+        <div class="service-card-box">
+          <h2>Soldadura <br/>especializada.</h2>
+          <p>Realizamos trabajos de soldadura en múltiples tipos de acero, garantizando calidad y precisión en cada unión.</p>
+        </div>
+      </div>
+      <div class="service-img">
+        <img src="images/soldador.png" alt="Soldador profesional Ferroprime SAS Medellín" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <img src="images/ingenieria.jpeg" alt="Diseño y fabricación metalmecánica Medellín" loading="lazy" />
+      </div>
+      <div class="service-text right">
+        <h2>Diseño y fabricación.</h2>
+        <p>Desarrollamos productos metalmecánicos a la medida, integrando procesos de corte, doblado y ensamble, hasta culminar con la entrega final del proyecto.</p>
+      </div>
+    </div>
+
+    <div class="service-row reverse">
+      <div class="service-text">
+        <div class="service-card-box">
+          <h2>Reparación y <br/>mantenimiento.</h2>
+          <p>Restauramos estructuras metálicas industriales y comerciales en Medellín y Antioquia.</p>
+        </div>
+      </div>
+      <div class="service-img">
+        <img src="images/mantenimiento.jpg" alt="Mantenimiento estructuras metálicas Medellín" loading="lazy" />
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════ QUIÉNES SOMOS ══════════════ -->
+  <section id="quienes" aria-label="Quiénes Somos">
+    <div class="quienes-inner">
+      <h2>Quiénes Somos</h2>
+      <p>En <strong>Ferroprime SAS</strong>, transformamos las ideas de nuestros clientes en soluciones industriales sólidas y confiables en <strong>Medellín, Antioquia</strong>. Desde un pequeño detalle hasta grandes proyectos, acompañamos cada etapa para que la visión de nuestros clientes se convierta en realidad, entregando siempre resultados de alta calidad en el sector metalmecánico.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACTO ══════════════ -->
+  <section id="contacto" aria-label="Contacto y cotización">
+    <div class="contacto-inner">
+      <h2 class="contact-title">Contáctanos</h2>
+      <p class="contact-sub">Solicita tu cotización.</p>
+
+      <div class="contact-info">
+        <a href="mailto:ventas@ferroprimeco.com" class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <span>ventas@ferroprimeco.com</span>
+        </a>
+        <a href="https://wa.me/573046657025" target="_blank" rel="noopener" class="contact-info-item">
+          <i class="fab fa-whatsapp"></i>
+          <span>+57 304 665 7025</span>
+        </a>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Digite su nombre" required autocomplete="name"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Digite su correo electrónico" required autocomplete="email"/>
+        </div>
+        <div class="form-group">
+          <label for="requerimiento">Requerimiento:</label>
+          <textarea id="requerimiento" name="requerimiento" rows="5" placeholder="Describa su requerimiento..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Ferroprime SAS Logo" loading="lazy" />
+        <p class="footer-tagline">Soldadura industrial confiable<br/>en Medellín, Colombia.</p>
+        <a href="mailto:ventas@ferroprimeco.com" class="footer-email">
+          <i class="fas fa-envelope"></i> ventas@ferroprimeco.com
+        </a>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="#hero">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#quienes">Quiénes Somos</a>
+        </div>
+        <div class="footer-col">
+          <h4>Asistencia</h4>
+          <a href="#contacto">Contáctanos</a>
+          <a href="https://wa.me/573046657025" target="_blank" rel="noopener">Soporte técnico</a>
+          <a href="#contacto">Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Ferroprime SAS · Medellín, Antioquia, Colombia · Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════ BOTÓN FLOTANTE WHATSAPP ══════════════ -->
+  <a href="https://wa.me/573046657025?text=Hola%20Ferroprime%20SAS!%20Quisiera%20solicitar%20una%20cotizaci%C3%B3n."
+     target="_blank" rel="noopener"
+     class="wa-float"
+     aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">¡Escríbenos!</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
