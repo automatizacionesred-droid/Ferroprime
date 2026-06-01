@@ -56,6 +56,7 @@
     "image": "https://www.ferroprimeco.com/images/logo.png",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Calle 28 #59-18",
       "addressLocality": "Medellín",
       "addressRegion": "Antioquia",
       "addressCountry": "CO"
@@ -92,27 +93,22 @@
       position: relative;
       overflow: hidden;
       min-height: 100vh;
-      /* GPU layer propio — evita repaint en el resto de la página */
       isolation: isolate;
     }
 
-    /* ── La imagen vive en ::before, separada del contenido ──
-       will-change + transform3d = compositing en GPU, 0 jank        */
     #hero::before {
       content: '';
       position: absolute;
-      inset: -8%;           /* margen extra para el movimiento parallax */
+      inset: -8%;
       background-image: url('images/hero-bg.jpg');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
-      /* Fuerza compositing layer propio en GPU */
       will-change: transform;
       transform: translate3d(0, var(--parallax-y, 0px), 0);
       z-index: 0;
     }
 
-    /* ── Overlay oscuro degradado ── */
     #hero::after {
       content: '';
       position: absolute;
@@ -128,7 +124,6 @@
       pointer-events: none;
     }
 
-    /* ── Contenido encima de ambos pseudo-elementos ── */
     #hero .hero-content,
     #hero .services-grid {
       position: relative;
@@ -140,12 +135,59 @@
     }
     .hero-logo-wrap { margin-bottom: 0; }
 
-    /* ── Mobile: sin parallax, imagen estática ── */
     @media (max-width: 768px) {
       #hero::before {
         inset: 0;
         will-change: auto;
         background-position: 65% center;
+      }
+    }
+
+    /* ══ MAPA ══ */
+    .mapa-seccion {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .mapa-seccion h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: #f97316;
+      margin-bottom: 0.4rem;
+    }
+
+    .mapa-direccion {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 1.2rem;
+    }
+
+    .mapa-direccion i {
+      color: #f97316;
+      margin-right: 0.4rem;
+    }
+
+    .mapa-wrapper {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+      border: 1px solid rgba(249,115,22,0.2);
+    }
+
+    .mapa-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .mapa-wrapper iframe {
+        height: 260px;
       }
     }
   </style>
@@ -309,6 +351,27 @@
         </div>
         <button type="submit" class="btn-send">Enviar por WhatsApp</button>
       </form>
+
+      <!-- ══ MAPA ══ -->
+      <div class="mapa-seccion">
+        <h3>Nuestra Ubicación</h3>
+        <p class="mapa-direccion">
+          <i class="fas fa-location-dot"></i>Calle 28 #59-18, Medellín, Antioquia
+        </p>
+        <div class="mapa-wrapper">
+          <iframe
+            src="https://maps.google.com/maps?q=Calle+28+%2359-18,+Medell%C3%ADn,+Antioquia,+Colombia&output=embed&z=17"
+            width="100%"
+            height="360"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Ferroprime SAS">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
